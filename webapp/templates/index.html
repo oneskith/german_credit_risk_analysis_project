@@ -1,0 +1,110 @@
+<form method="POST" class="needs-validation" novalidate>
+    <div class="row g-3">
+        <!-- Personal Info -->
+        <div class="col-md-6">
+            <label for="Age" class="form-label">Age</label>
+            <input type="number" class="form-control" id="Age" name="Age" step="1" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="Sex" class="form-label">Sex</label>
+            <select class="form-select" id="Sex" name="Sex" required>
+                <option value="">--Select--</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+
+        <!-- Financial Info -->
+        <div class="col-md-6">
+            <label for="Job" class="form-label">Job Category</label>
+            <input type="number" class="form-control" id="Job" name="Job" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="Housing" class="form-label">Housing</label>
+            <select class="form-select" id="Housing" name="Housing" required>
+                <option value="">--Select--</option>
+                <option value="own">Own</option>
+                <option value="rent">Rent</option>
+                <option value="free">For free</option>
+            </select>
+        </div>
+
+        <!-- Account Info -->
+        <div class="col-md-6">
+            <label for="SavingAccounts" class="form-label">Saving Accounts</label>
+            <select class="form-select" id="SavingAccounts" name="Saving accounts">
+                <option value="">--Select--</option>
+                <option value="no account">No account</option>
+                <option value="little">Little</option>
+                <option value="moderate">Moderate</option>
+                <option value="rich">Rich</option>
+                <option value="quite rich">Quite rich</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="CheckingAccount" class="form-label">Checking Account</label>
+            <select class="form-select" id="CheckingAccount" name="Checking account">
+                <option value="">--Select--</option>
+                <option value="no account">No account</option>
+                <option value="little">Little</option>
+                <option value="moderate">Moderate</option>
+                <option value="rich">Rich</option>
+            </select>
+        </div>
+
+        <!-- Loan Info -->
+        <div class="col-md-6">
+            <label for="CreditAmount" class="form-label">Credit Amount (€)</label>
+            <input type="number" class="form-control" id="CreditAmount" name="Credit amount" step="0.01" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="Duration" class="form-label">Duration (months)</label>
+            <input type="number" class="form-control" id="Duration" name="Duration" required>
+        </div>
+
+        <div class="col-12">
+            <label for="Purpose" class="form-label">Loan Purpose</label>
+            <select class="form-select" id="Purpose" name="Purpose" required>
+                <option value="">--Select--</option>
+                <option value="business">Business</option>
+                <option value="car">Car</option>
+                <option value="domestic appliances">Domestic appliances</option>
+                <option value="education">Education</option>
+                <option value="furniture/equipment">Furniture/equipment</option>
+                <option value="radio/TV">Radio/TV</option>
+                <option value="repairs">Repairs</option>
+                <option value="vacation/others">Vacation/others</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="d-grid gap-2 mt-4">
+        <button type="submit" class="btn btn-primary btn-lg">
+            <i class="fas fa-calculator me-2"></i>Calculate Risk
+        </button>
+    </div>
+</form>
+
+<script>
+// Client-side validation
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+</script>
+

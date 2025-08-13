@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    {% if error %}
+    <div class="alert alert-danger">
+        {{ error }}
+    </div>
+    {% endif %}
+    
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            {% include "index.html" %}
+        </div>
+    </div>
+</div>
+{% endblock %}

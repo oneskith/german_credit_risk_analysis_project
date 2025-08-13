@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}Results - Credit Risk Predictor{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card result-card">
+                <div class="card-header bg-white">
+                    <h3 class="mb-0"><i class="fas fa-chart-pie me-2"></i>Risk Assessment Result</h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert 
+                        {% if prediction == 'High Risk' %}alert-danger
+                        {% elif prediction == 'Medium Risk' %}alert-warning
+                        {% else %}alert-success
+                        {% endif %}">
+                        <h4 class="alert-heading">
+                            <i class="fas fa-{% if prediction == 'High Risk' %}exclamation-triangle
+                                            {% elif prediction == 'Medium Risk' %}exclamation-circle
+                                            {% else %}check-circle{% endif %} me-2"></i>
+                            {{ prediction }}
+                        </h4>
+                        <p class="mb-0">Based on the provided client information</p>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <a href="/" class="btn btn-primary">
+                            <i class="fas fa-redo me-2"></i>Assess Another Client
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
